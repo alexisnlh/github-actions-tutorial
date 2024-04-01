@@ -15,6 +15,11 @@ on:
 jobs:
   # This workflow contains a single job called "build"
   build:
+    env:
+      platform: aws
+      region: us-east-1
+      account: 123456789012
+
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
 
@@ -23,6 +28,12 @@ jobs:
       # Runs a single command using the runners shell
       - name: "Display message"
         run: echo "Hello, world!"
+
+      - name: "Showing environment variables"
+        run:
+          echo "Este es el valor de platform: ${{ env.platform }}"
+          echo "Este es el valor de region: ${{ env.region }}"
+          echo "Este es el valor de account: ${{ env.account }}"
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
 #      - uses: actions/checkout@v3
 
