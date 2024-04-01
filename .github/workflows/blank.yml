@@ -35,6 +35,10 @@ jobs:
           echo "Este es el valor de platform: ${{ env.platform }}"
           echo "Este es el valor de region: ${{ env.region }}"
           echo "Este es el valor de account: ${{ env.account }}"
+
+      - name: "Showing default variables"
+        run: |
+          echo "Event: ${{ toJSON(github.event) }}"
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
 #      - uses: actions/checkout@v3
 
