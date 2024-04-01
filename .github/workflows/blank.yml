@@ -39,6 +39,8 @@ jobs:
       - name: "Showing default variables"
         run: |
           echo "Event: ${{ toJSON(github.event) }}"
+          echo "Github_ACTOR: $GITHUB_ACTOR"
+          echo "Github_REPOSITORY: $GITHUB_REPOSITORY"
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
 #      - uses: actions/checkout@v3
 
